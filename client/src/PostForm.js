@@ -19,7 +19,7 @@ const PropForm = props => (
       value={props.text}
       onChange={props.handleTextChange}
     />
-    <Button type="submit">Submit</Button>
+    <Button type="submit" color="primary">Submit</Button>
   </Form>
 );
 

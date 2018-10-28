@@ -14,23 +14,28 @@ class PostBox extends Component {
     render() {
         return (
             <Container fluid='true'>
+                <Row className='form'>
+                    <Col 
+                    sm={{size: 10, offset: 1}} 
+                    xs={{size: 12, offset: 0}}
+                    >
+                        <PostForm />
+                    </Col>
+                </Row>
                 <Row className='postheader'>
                     <Col                    
-                    xl={{size: 10, offset: 1}} 
-                    md={{size: 12, offset: 0}}
+                    sm={{size: 10, offset: 1}} 
+                    xs={{size: 12, offset: 0}}
                     >
                         <h2>Posts:</h2>
                     </Col>
                 </Row>
                 <Row className='posts'>
-                    <PostList data={DATA} />
-                </Row>
-                <Row className='form'>
-                    <Col 
-                    xl={{size: 10, offset: 1}} 
-                    md={{size: 12, offset: 0}}
+                    <Col                    
+                    sm={{size: 10, offset: 1}} 
+                    xs={{size: 12, offset: 0}}
                     >
-                        <PostForm />
+                        <PostList data={DATA} />
                     </Col>
                 </Row>
             </Container>
