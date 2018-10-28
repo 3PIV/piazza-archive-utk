@@ -1,25 +1,26 @@
 // PostForm.js
 import React from 'react'
+import { Button, Input, Form } from 'reactstrap'
 import PropTypes from 'prop-types'
 
 const PropForm = props => (
-    <form onSubmit={props.submitComment}>
-    <input
+    <Form onSubmit={props.submitComment}>
+    <Input
       type="text"
       name="author"
       placeholder="Your tags..."
       value={props.author}
       onChange={props.handleChangeText}
     />
-    <input
+    <Input
       type="text"
       name="text"
       placeholder="Filter for..."
       value={props.text}
       onChange={props.handleTextChange}
     />
-    <button type="submit">Submit</button>
-  </form>
+    <Button type="submit">Submit</Button>
+  </Form>
 );
 
 PropForm.propTypes = {
