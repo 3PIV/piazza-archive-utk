@@ -19,10 +19,10 @@ In a suitable working directory:
 
 ```
 1.) git clone
-2.) heroku . <- this will set up a heroku instance through your herokue account
+2.) cd piazza-archive-utk && heroku . <- this will set up a heroku instance through your herokue account
 2.a.) heroku ps:scale web=0 <- stop heroku instance from launching on the web [optional] 
-3.) cd piazza-archive-utk && npm install <- install from package.json
-4.) heroku local <- run local on port 5000
+3.) npm install <- install from package.json
+4.) npm run-script start:dev <- run local on port 5000
 ```
 
 ### Coding Style
