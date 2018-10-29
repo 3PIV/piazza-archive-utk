@@ -5,8 +5,8 @@ import Post from './Post';
 
 const PostList = (props) => {
     const postNodes = props.data.map(post => (
-        <Post subject={post.subject} id={post.id}>
-            {post.content}
+        <Post subject={post.history.subject} id={post.id}>
+            {post.history.content}
         </Post>
     ));
     return (

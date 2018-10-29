@@ -8,8 +8,8 @@ const Post = props => (
     <img alt="user_image" className="userImage" src={`https://picsum.photos/70?random=${props.id}`} />
     <div className="textContent">
       <div className="singleCommentContent">
-        <h3>{props.author}</h3>
-        <ReactMarkdown source={props.children} />
+        <h3>{props.subject}</h3>
+        <ReactMarkdown source={props.content} />
       </div>
       <div className="singleCommentButtons">
       </div>
@@ -18,8 +18,8 @@ const Post = props => (
 );
 
 Post.propTypes = {
-  author: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  subject: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   timestamp: PropTypes.string.isRequired,
 };
 
