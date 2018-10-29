@@ -100,7 +100,7 @@ const data = [
         "tag_good_arr": [],
         "history": [
             {
-                "content": "<p>Does anyone know if a curve was applied to our final grades on myutk?<\/p>",
+                "content": "<p>Does anyone know if a curve was applied to our final grades on myutk?</p>",
                 "anon": "full",
                 "created": "2017-12-18T06:24:03Z",
                 "subject": "Final Grade"
@@ -187,7 +187,7 @@ const data = [
                 "children": [],
                 "history": [
                     {
-                        "content": "<p>John said on &#64;255 that we would be having it at that time -- as for how long it is, that&#39;s probably up to how many questions we have.<\/p>",
+                        "content": "<p>John said on &#64;255 that we would be having it at that time -- as for how long it is, that&#39;s probably up to how many questions we have.</p>",
                         "anon": "no",
                         "created": "2017-12-11T17:25:09Z",
                         "uid": "irtf2dw21q5xj",
@@ -211,7 +211,7 @@ const data = [
                     "embed_links": null
                 },
                 "children": [],
-                "subject": "<p>Ok, thanks<\/p>"
+                "subject": "<p>Ok, thanks</p>"
             },
             {
                 "folders": [],
@@ -245,10 +245,10 @@ const data = [
                             "embed_links": null
                         },
                         "children": [],
-                        "subject": "<p>I believe it is at the normal lab time (3:35) in the normal lab room unless there is someone in there. <\/p>"
+                        "subject": "<p>I believe it is at the normal lab time (3:35) in the normal lab room unless there is someone in there. </p>"
                     }
                 ],
-                "subject": "<p> So is it at the normal lab time or is it at 2:55? Also is it in the lab or the classroom?<\/p>\n<p><\/p>"
+                "subject": "<p> So is it at the normal lab time or is it at 2:55? Also is it in the lab or the classroom?</p>\n<p></p>"
             }
         ],
         "nr": 256,
@@ -280,7 +280,7 @@ const data = [
         "tag_good_arr": [],
         "history": [
             {
-                "content": "<p>Is the review going to be at the same time (starting at 3:35 PM) as our normal labs and how long will it be? (I have to drive an hour and 10 minutes to get there.)<\/p>",
+                "content": "<p>Is the review going to be at the same time (starting at 3:35 PM) as our normal labs and how long will it be? (I have to drive an hour and 10 minutes to get there.)</p>",
                 "anon": "full",
                 "created": "2017-12-11T15:50:04Z",
                 "subject": "When is the Exam Review on Monday 12/11"

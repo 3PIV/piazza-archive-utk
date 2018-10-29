@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import logger from 'morgan';
 import mongoose from 'mongoose';
 import { getSecret } from './secrets';
+import Post from './models/post';
 
 // create instances
 const app = express();
@@ -24,6 +25,20 @@ app.use(logger('dev'));
 // now we can set the route path & initialize the API
 router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
+});
+
+router.get('/posts', (req, res) => {
+    Post.find((err, posts) => {
+      if (err) return res.json({ success: false, error: err });
+      return res.json({ success: true, data: posts });
+    });
+});
+
+router.post('/posts', (req, res) => {
+    Comment.find((err, posts) => {
+      if (err) return res.json({ success: false, error: err });
+      return res.json({ success: true, data: posts });
+    });
 });
 
 // Use our router configuration when we call /api
