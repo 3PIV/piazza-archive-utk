@@ -6,25 +6,29 @@
     overflow: auto;
   }
   
+  .postNodes {
+      margin: 0px;
+      padding: 0px;
+      font-size: 20px;
+  }
+
+  .postheader {
+      border-bottom-color: #385997;
+      border-width: 3px;
+      border-radius: 3px;
+      border-bottom: 3px;
+  }
+
   .singleComment {
-    padding: 10px 20px;
-    display: flex;
+    padding-top: 20px;
   }
-  
-  .singleCommentContent {
-    background-color: #fff;
-    border-radius: 25px;
-    padding: 10px;
-    display: inline-flex;
-  }
-  
+
   .userImage {
     border-radius: 50%;
   }
   
-  
   .singleCommentContent h3 {
-    font-size: 12px;
+    font-size: 14px;
     color: #385997;
   }
   

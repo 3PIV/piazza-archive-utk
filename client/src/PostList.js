@@ -3,22 +3,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Post from './Post';
 
-const PostList = (props) => {
-    const postNodes = props.data.map(post => (
-        <Post subject={post.history.subject} id={post.id}>
-            {post.history.content}
-        </Post>
-    ));
+const PostList = ({ data }) => {
     return (
         <div>
-            { postNodes }
-        </div>
-    );
+        {data.length && data.map(post => (
+            <Post
+                subject={post.history[0].subject}
+                id={post.id}
+                style={{right: 10}}
+            >
+                {post.history[0].content}
+            </Post>
+        ))}
+    </div>);
 };
 
 PostList.propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({
-        subject: PropTypes.string,
+          // An object taking on a particular shape
+        history: PropTypes.arrayOf(PropTypes.shape({
+            subject: PropTypes.string,
+            content: PropTypes.string,
+        })),
         id: PropTypes.string,
         content: PropTypes.string
     })),

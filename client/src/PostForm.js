@@ -6,16 +6,15 @@ import PropTypes from 'prop-types'
 
 
 const PropForm = props => (
-    
     <Form onSubmit={props.submitComment}>
         <FormGroup>
-          <Input type="select" name="select" id="exampleSelect">
-            <option>Lab 1</option>
-            <option>Lab 2</option>
-            <option>Lab 3</option>
-            <option>Lab 4</option>
-            <option>Lab 5</option>
-          </Input>
+            <Input type="select" name="select" id="exampleSelect">
+                <option>Lab 1</option>
+                <option>Lab 2</option>
+                <option>Lab 3</option>
+                <option>Lab 4</option>
+                <option>Lab 5</option>
+            </Input>
         </FormGroup>
         <Input
         type="text"
@@ -25,7 +24,7 @@ const PropForm = props => (
         onChange={props.handleTextChange}
         />
         <Button type="submit" color="primary">Submit</Button>
-  </Form>
+    </Form>
 );
 
 PropForm.propTypes = {
