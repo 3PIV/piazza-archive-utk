@@ -1,8 +1,12 @@
 {
   "name": "piazza-utk-archive",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "An archive of old Piazza posts for Systems Programming",
+  "main": "client/index.js",
+  "engines": {
+    "node": "8.11.4",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "dev": "concurrently \"npm run-script start:server\" \"npm run-script start:client\"",
     "start:server": "cd backend && nodemon server.js --exec babel-node --presets es2015,stage-0",

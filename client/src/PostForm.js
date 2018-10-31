@@ -1,42 +1,33 @@
 // PostForm.js
 import React from 'react'
-import { Button, Input, Form, FormGroup, Label } from 'reactstrap'
+import { Button, Input, Form } from 'reactstrap'
+import FolderList from './FolderList'
 import PropTypes from 'prop-types'
 
 
 
 const PropForm = props => (
-    <Form onSubmit={props.submitComment}>
-        <FormGroup>
-            <Input type="select" name="select" id="exampleSelect">
-                <option>Lab 1</option>
-                <option>Lab 2</option>
-                <option>Lab 3</option>
-                <option>Lab 4</option>
-                <option>Lab 5</option>
-            </Input>
-        </FormGroup>
+    <Form onSubmit={props.setFilters}>
+        <FolderList data={props.folderData} className="folderSelector" />
         <Input
-        type="text"
-        name="text"
-        placeholder="Filter for..."
-        value={props.text}
-        onChange={props.handleTextChange}
+            type="text"
+            name="filter"
+            id="filterFolder"
+            placeholder="malloc"
+            value={props.text}
+            onChange={props.handleTextChange}
         />
-        <Button type="submit" color="primary">Submit</Button>
+        <Button type="submit" color="primary" id="submitButton">Submit</Button>
     </Form>
 );
 
 PropForm.propTypes = {
-    submitComment: PropTypes.func.isRequired,
-    handleChangeText: PropTypes.func.isRequired,
-    text: PropTypes.string,
-    author: PropTypes.string,
+    setFilters: PropTypes.func.isRequired,
+    folderData: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 PropForm.defaultProps = {
-    text: '',
-    author: '',
+    folderData:['nil']
 };
 
 export default PropForm;

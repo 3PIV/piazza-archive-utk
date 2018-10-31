@@ -10,12 +10,12 @@ const PostList = ({ data }) => {
             <Post
                 subject={post.history[0].subject}
                 id={post.id}
-                style={{right: 10}}
             >
                 {post.history[0].content}
             </Post>
         ))}
-    </div>);
+        </div>
+    );
 };
 
 PostList.propTypes = {

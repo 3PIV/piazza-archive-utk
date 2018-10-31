@@ -41,17 +41,27 @@ router.post('/posts', (req, res) => {
     });
 });
 
-router.get('/folders', (req, res) => {
-    Post.find().distinct('folders',(err, posts) => {
+router.get('/posts/:postId', (req, res) => {
+    console.log(req.params)
+    const { postId } = req.params;
+    if (!postId) return res.json({success: false, error: 'No post Id Provided'});
+    Post.findById(postId,(err, post) => {
       if (err) return res.json({ success: false, error: err });
-      return res.json({ success: true, data: posts });
+      return res.json({ success: true, post: post });
+    });
+});
+
+router.get('/folders', (req, res) => {
+    Post.find().distinct('folders',(err, folders) => {
+      if (err) return res.json({ success: false, error: err });
+      return res.json({ success: true, folderdata: folders });
     });
 });
 
 router.post('/folders', (req, res) => {
-    Post.find().distinct('folders',(err, posts) => {
+    Post.find().distinct('folders',(err, folders) => {
       if (err) return res.json({ success: false, error: err });
-      return res.json({ success: true, data: posts });
+      return res.json({ success: true, folderdata: folders });
     });
 });
 

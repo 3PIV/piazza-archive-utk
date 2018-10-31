@@ -1,11 +1,84 @@
+  html{
+      background-color: var(--primebackground);
+  }
+
+  html:root{
+    --primary: #3498db;
+    --primeborder: #2c3e50;
+    --primebackground: #ecf0f1;
+  }
+
   * {
     font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
+  #root {
+    background-color: var(--primebackground);
+  }
+
+  body {
+      background-color: var(--primebackground);
+    }
+
+  .footerContent{
+      justify-content: center;
+      align-content: center;
+      padding: 20px;
+  }
+
+  .footerContent p {
+      justify-content: center;
+      align-content: center;
+      align-self: center;
+      margin-top: 10px;
+  }
+
+  .mainContainer {
+      background-color: var(--primebackground);
+      height: 100%;
+  }
+
+  .mainContainer::after{
+      background-color: var(--primebackground);
+  }
+
   .posts {
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    border-right-style: solid;
+    border-right-color: var(--primeborder);
+    border-right-width: thin;
+    border-bottom-color: var(--primeborder);
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    height: 650px;
+  }
+
+  .postList {
+    height: 650px;
   }
   
+  .postContent {
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    border-bottom-color: var(--primeborder);
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    height: 650px;
+  }
+
+  .postTitle {
+      color: var(--primeborder);
+      font-size: 14px;
+      padding-top: 20px;
+  }
+
+  .postTitle:hover {
+      color: var(--primary);
+      padding-top: 22px;
+      cursor: pointer;
+  }
+
   .postNodes {
       margin: 0px;
       padding: 0px;
@@ -13,27 +86,9 @@
   }
 
   .postheader {
-      border-bottom-color: #385997;
-      border-width: 3px;
-      border-radius: 3px;
-      border-bottom: 3px;
-  }
-
-  .singleComment {
-    padding-top: 20px;
-  }
-
-  .userImage {
-    border-radius: 50%;
-  }
-  
-  .singleCommentContent h3 {
-    font-size: 14px;
-    color: #385997;
-  }
-  
-  .singleCommentContent p {
-    font-size: 12px;
+      border-bottom-style: solid;
+      border-bottom-color: var(--primeborder);
+      border-bottom-width: thin;
   }
   
   .time {
@@ -43,19 +98,20 @@
     color: #999;
   }
   
-  .singleCommentButtons a {
-    margin: 0px 3px;;
-    padding-top: 10px;
-    cursor: pointer;
-    font-size: 10px;
-    color: #385997;
-    letter-spacing: 0.05em;
+  .folderSelector {
+      display: flex;
+      margin-right: 15px;
+  }
+
+  .folderSelect {
+    margin-right: 15px;
   }
 
   .form {
-    min-width: 300px;
+    background-color: var(--primeborder);
+    padding-bottom: 10px;
   }
-  
+
   .form form {
     display: flex;
     padding-top: 15px ;
@@ -63,10 +119,6 @@
   
   .form input {
     margin-right: 10px;
-    flex: 3;
-  }
-  .form input:first-child {
-    flex: 1;
   }
   
   .form button:hover {
