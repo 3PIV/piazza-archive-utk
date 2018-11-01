@@ -23,8 +23,8 @@ In a suitable working directory:
 2.a.) heroku ps:scale web=0 <- stop heroku instance from launching on the web [optional] 
 2.b.) heroku ps:scale server=0 <- stop heroku instance from launching server to web [optional]
 3.) npm install <- install from package.json
-4.) npm run-script start:dev <- run local on port 5000
-4. alt) heroku local
+4.) npm run-script start:dev <- run client on port 3000, server on 3001
+4. alt) heroku local <- run client on port 5000, server on 3001
 ```
 
 ### Coding Style
