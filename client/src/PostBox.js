@@ -23,15 +23,14 @@ class PostBox extends Component {
         this.pollInterval = null;
     }
 
-    setActivePost = (newPostId) => {
-        this.setState({postId: newPostId});
-        console.log(this.state.postId);
+    setActivePost(newPostId) {
+        this.setState({postId: newPostId}, console.log(this.state.postId));
+        this.loadPostContentById(newPostId);
     }
 
     componentDidMount() {
         this.loadPostsFromServer();
         this.loadFoldersFromServer();
-        this.setActivePost('jbbtemu8mzd6qy');
         if (!this.pollInterval) {
           //this.pollInterval = setInterval(this.loadPostsFromServer, 200000);
         }
@@ -51,7 +50,7 @@ class PostBox extends Component {
             .then((res) => {
                 if (!res.success) this.setState({ error: res.error });
                 else this.setState({ data: res.data });
-        });
+        }).catch(e => console.error(e));
     }
 
     loadFoldersFromServer = () => {
@@ -63,7 +62,7 @@ class PostBox extends Component {
             .then((res) => {
                 if (!res.success) this.setState({ error: res.error });
                 else this.setState({ folderdata: res.folderdata });
-        });
+            }).catch(e => console.error(e));
     }
 
     loadFilteredPosts = () => {
@@ -75,19 +74,20 @@ class PostBox extends Component {
             .then((res) => {
                 if (!res.success) this.setState({ error: res.error });
                 else this.setState({ data: res.data });
-        });
+        }).catch(e => console.error(e));
     }
 
-    loadPostContentById = () => {
+    loadPostContentById = (postId) => {
         // fetch returns a promise. If you are not familiar with promises, see
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-        fetch('/api/posts/${postId}')
+        fetch(`/api/posts/${postId}`)
             .then(contentdata => 
                 contentdata.json())
             .then((res) => {
+              console.log(res);
                 if (!res.success) this.setState({ error: res.error });
-                else this.setState({ contentdata: res.contentdata });
-        });
+                else this.setState({ contentdata: res.data[0] });
+        }).catch(e => console.error(e));
     }
 
     render() {
@@ -126,7 +126,10 @@ class PostBox extends Component {
                         md={{size: 2, offset: 1}}    
                         xs={{size: 3, offset: 0}}
                     >
-                        <PostList data={this.state.data} />
+                        <PostList
+                          updatePostID={this.setActivePost.bind(this)}
+                          data={this.state.data}
+                        />
                     </Col>
                     <Col className='postContent'
                         md={{size: 8, offset: 0}}    

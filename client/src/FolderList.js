@@ -6,7 +6,7 @@ import { Input } from 'reactstrap'
 const FolderList = ({ data }) => {
     return (
         <Input type="select" name="folder" id="folderSelect">
-            {data.length && data.map(folder => <option>{folder}</option>)}
+            {data.length && data.map((folder, i) => <option key={i}>{folder}</option>)}
         </Input>
     );
 };

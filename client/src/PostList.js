@@ -3,15 +3,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Post from './Post'
 
-const PostList = ({ data }) => {
+const PostList = ({ data, updatePostID }) => {
     return (
         <div>
-        {data.length && data.map(post => (
-            <Post
-                subject={post.history[0].subject}
-                id={post.id}
-            >
-            </Post>
+        {data.length && data.map((post, i) => (
+            <div onClick={() => updatePostID(post.id)} key={i}>
+              <Post
+                  subject={post.history[0].subject}
+                  id={post.id}
+              />
+            </div>
         ))}
         </div>
     );
