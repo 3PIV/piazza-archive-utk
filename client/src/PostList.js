@@ -1,7 +1,7 @@
 // PostList.js
 import React from 'react'
 import PropTypes from 'prop-types'
-import Post from './Post';
+import Post from './Post'
 
 const PostList = ({ data }) => {
     return (
@@ -11,7 +11,6 @@ const PostList = ({ data }) => {
                 subject={post.history[0].subject}
                 id={post.id}
             >
-                {post.history[0].content}
             </Post>
         ))}
         </div>
@@ -26,8 +25,9 @@ PostList.propTypes = {
             content: PropTypes.string,
         })),
         id: PropTypes.string,
-        content: PropTypes.string
+        content: PropTypes.string,
     })),
+
 };
 
 PostList.defaultProps = {

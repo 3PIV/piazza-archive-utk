@@ -5,15 +5,18 @@ import PropTypes from 'prop-types';
 const Post = props => (
   <div className="postTitle">
     {props.subject}
+    {props.id}
   </div>
 );
 
 Post.propTypes = {
-    history: PropTypes.shape({
-        subject: PropTypes.string.isRequired,
-        content: PropTypes.string.isNotRequired,
-    }),
     subject: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
 };
+
+Post.defaultProps = {
+    subject: '',
+    id: '',
+}
 
 export default Post;

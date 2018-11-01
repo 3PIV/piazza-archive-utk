@@ -28,26 +28,25 @@ router.get('/', (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-    Post.find({},{'history.subject': 1, 't': 1},(err, posts) => {
+    Post.find({},{'history.subject': 1, 't': 1, 'id': 1},(err, posts) => {
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true, data: posts });
     });
 });
 
 router.post('/posts', (req, res) => {
-    Post.find({},{'history.subject': 1, 't': 1},(err, posts) => {
+    Post.find({},{'history.subject': 1, 't': 1, 'id': 1},(err, posts) => {
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true, data: posts });
     });
 });
 
 router.get('/posts/:postId', (req, res) => {
-    console.log(req.params)
     const { postId } = req.params;
     if (!postId) return res.json({success: false, error: 'No post Id Provided'});
-    Post.findById(postId,(err, post) => {
+    Post.find({'id': postId},{},(err, post) => {
       if (err) return res.json({ success: false, error: err });
-      return res.json({ success: true, post: post });
+      return res.json({ success: true, data: post });
     });
 });
 
@@ -62,15 +61,6 @@ router.post('/folders', (req, res) => {
     Post.find().distinct('folders',(err, folders) => {
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true, folderdata: folders });
-    });
-});
-
-router.get('/posts/:byFolder', (req, res) => {
-    console.log(req.params);
-    const { postFolder } = req.params;  
-    Post.find({'folder': postFolder},{'history.subject': 1, 't': 1},(err, comments) => {
-      if (err) return res.json({ success: false, error: err });
-      return res.json({ success: true, data: comments });
     });
 });
 

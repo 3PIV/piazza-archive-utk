@@ -124,3 +124,10 @@
   .form button:hover {
     cursor: pointer;
   }
+
+  .logo {
+
+    max-width: 64px;
+    min-width: 32px;
+    
+  }
