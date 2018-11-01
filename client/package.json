@@ -20,6 +20,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-markdown": "^4.0.3",
+    "react-render-html": "^0.6.0",
     "react-scripts": "2.0.5",
     "reactstrap": "^6.5.0",
     "whatwg-fetch": "^3.0.0"

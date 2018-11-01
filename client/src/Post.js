@@ -1,10 +1,11 @@
 // Comment.js
 import React from 'react';
 import PropTypes from 'prop-types';
+import renderHTML from 'react-render-html';
 
 const Post = props => (
   <div className="postTitle">
-    {props.subject}
+    {renderHTML(props.subject)}
   </div>
 );
 
