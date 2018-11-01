@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const Post = props => (
   <div className="postTitle">
     {props.subject}
-    {props.id}
   </div>
 );
 
