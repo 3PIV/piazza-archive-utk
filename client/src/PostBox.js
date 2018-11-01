@@ -29,7 +29,6 @@ class PostBox extends Component {
     }
 
     componentDidMount() {
-        console.log(process.env.DB_URI);
         this.loadPostsFromServer();
         this.loadFoldersFromServer();
         if (!this.pollInterval) {

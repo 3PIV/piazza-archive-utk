@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import { getSecret } from './secrets';
 import Post from './models/post';
 
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 console.log(process.env)
 // create instances
 const app = express();
